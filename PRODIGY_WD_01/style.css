@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+body{
+    height: 100vh;
+    background-color: black;
+    background-image: url('https://i.pinimg.com/originals/70/d0/e8/70d0e8050d4ef9f2a25b80f672b369f6.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+a:hover{
+    color: deeppink;
+}
+header{
+    position: relative;
+    padding: 0 2rem;
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.navbar .logo a{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+}
+.navbar .toggle_btn{
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+.toggle_btn:hover{
+    color: deeppink;
+    scale: 1.3;
+}
+.action_btn{
+    background-color: deeppink;
+    border-radius: 20px;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
+}
+.action_btn:hover{
+    color: black;
+    background-color: gold;
+    scale: 1.15;
+}
+.action_btn:active{
+    scale: 0.95;
+}
+.dropdown{
+    display: none;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 300px;
+    height: 0;
+    background-color: rgba(255, 255, 255, .2);
+    border-radius:15px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 0.2);
+}
+.dropdown.open{
+    height: 240px;
+}
+.dropdown li{
+    padding: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dropdown .action_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#cont{
+    color:beige;
+    height: calc(100vh - 60px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#cont h1{
+    font-size: 45px;
+    position: relative;
+    bottom: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+#cont p{
+    text-align:center;
+    font-size: 20px;
+}
+@media(max-width: 1000px){
+    .navbar .links,.navbar .action_btn{
+        display: none;
+    }
+    .navbar .toggle_btn{
+        display: block;
+    }
+    .dropdown{
+        display: block;
+    }
+}
+@media(max-width: 600px){
+    .dropdown{
+        width:unset;
+        left: 2rem;
+    }
+}
